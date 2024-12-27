@@ -1,0 +1,11 @@
+services:
+  sagemath:
+    image: sagemath/sagemath:latest
+    container_name: sagemath
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./workspace:/home/sage/workspace
+      - ./init:/home/sage/.sage
+    environment:
+      SAGE_STARTUP_FILE: '/home/sage/.sage/init.sage'
